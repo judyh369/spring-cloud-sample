@@ -1,0 +1,20 @@
+server:
+  port: 1101
+spring:
+  application:
+    name: eureka-server
+  freemarker:
+    template-loader-path: classpath:/templates/
+    prefer-file-system-access: false
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    instance-id: server1
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://localhost:1101/eureka
